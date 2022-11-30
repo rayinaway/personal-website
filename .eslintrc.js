@@ -9,17 +9,22 @@ module.exports = {
 		'plugin:eslint-plugin-import/warnings',
 		'plugin:eslint-plugin-import/typescript',
 		'plugin:eslint-plugin-promise/recommended',
+		'plugin:eslint-plugin-react/recommended',
 		'eslint-config-prettier'
 	],
-	plugins: ['eslint-plugin-prettier'],
+	plugins: ['eslint-plugin-prettier', 'eslint-plugin-react-hooks'],
 	parser: '@typescript-eslint/parser',
 	parserOptions: {
 		project: './tsconfig.json'
 	},
 	settings: {
-		'import/internal-regex': `^~/.*$`
+		'import/internal-regex': `^~/.*$`,
+		'react': {
+			version: 'detect'
+		}
 	},
 	env: {
+		browser: true,
 		node: true,
 		es6: true
 	},
@@ -61,6 +66,10 @@ module.exports = {
 		'prefer-const': 'error',
 		'prettier/prettier': 'error',
 		'promise/catch-or-return': 'off',
-		'quotes': ['error', 'single']
+		'quotes': ['error', 'single'],
+		'react-hooks/exhaustive-deps': 'error',
+		'react-hooks/rules-of-hooks': 'error',
+		'react/prop-types': 'off',
+		'react/react-in-jsx-scope': 'off'
 	}
 };
