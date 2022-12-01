@@ -3,6 +3,7 @@ module.exports = {
 	moduleNameMapper: {
 		'^~/(.*)$': '<rootDir>/src/$1'
 	},
-	setupFilesAfterEnv: ['jest-extended'],
+	testEnvironment: 'jsdom',
+	setupFilesAfterEnv: ['<rootDir>/src/test-setup.js'],
 	coverageDirectory: '<rootDir>/test-coverage'
 };
