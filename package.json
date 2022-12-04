@@ -65,7 +65,6 @@
 	"source": "./src/index.html",
 	"reactSnap": {
 		"source": "./build",
-		"publicPath": ".",
 		"inlineCss": true
 	}
 }
