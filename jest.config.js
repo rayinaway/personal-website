@@ -5,5 +5,6 @@ module.exports = {
 	},
 	testEnvironment: 'jsdom',
 	setupFilesAfterEnv: ['<rootDir>/src/test-setup.js'],
+	restoreMocks: true,
 	coverageDirectory: '<rootDir>/test-coverage'
 };
