@@ -7,7 +7,11 @@ import services from './services';
 const appElement = document.querySelector('#app');
 
 if (appElement != null) {
-	const appRoot = ReactDomClient.createRoot(appElement);
+	const rootRender = <Root services={services} />;
 
-	appRoot.render(<Root services={services} />);
+	if (appElement.childNodes.length > 0) {
+		ReactDomClient.hydrateRoot(appElement, rootRender);
+	} else {
+		ReactDomClient.createRoot(appElement).render(rootRender);
+	}
 }
